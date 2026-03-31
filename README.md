@@ -189,7 +189,10 @@ python src/predict.py
 * Deploy as a web application
 
 ---
+## Results
 
+### Segmentation Output
+![Prediction](outputs/prediction_output.png)
 
-
-Give it a ⭐ on GitHub!
+### Mask Preview
+![Mask](outputs/mask_preview.png)

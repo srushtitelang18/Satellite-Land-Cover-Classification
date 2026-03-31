@@ -1,4 +1,4 @@
-# 🌍 Satellite Land Cover Classification using Deep Learning
+# 🌍 Satellite Land Cover Classification using Unet
 
 ## 📌 Overview
 

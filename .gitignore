@@ -1,0 +1,5 @@
+tiles/
+*.tif
+*.pth
+*.npy
+__pycache__/

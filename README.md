@@ -1,4 +1,8 @@
-# 🌍 Satellite Land Cover Classification using Unet
+# 🌍 Satellite Land Cover Classification using U-Net
+
+🚀 AI-based land cover classification using Sentinel-2 satellite imagery, spectral indices (NDVI, NDWI), OpenStreetMap (OSM) data, and a U-Net deep learning model.
+
+---
 
 ## 📌 Overview
 
@@ -15,6 +19,12 @@ The system combines **spectral indices (NDVI, NDWI, NDBI)** with **OpenStreetMap
 
 ---
 
+## 🎯 Problem Statement
+
+Accurately classify land cover types (roads, vegetation, water, buildings) from satellite imagery using deep learning and geospatial data.
+
+---
+
 ## 🚀 Key Features
 
 * Uses real **Sentinel-2 satellite imagery**
@@ -23,6 +33,12 @@ The system combines **spectral indices (NDVI, NDWI, NDBI)** with **OpenStreetMap
 * Tile-based training for large images
 * Optimized **U-Net with MobileNetV2 encoder**
 * End-to-end pipeline (data → training → prediction)
+
+---
+
+## 🔄 Workflow
+
+Satellite Image → NDVI/NDWI → OSM Mask → Tile Generation → U-Net Training → Prediction
 
 ---
 
@@ -37,18 +53,15 @@ The system combines **spectral indices (NDVI, NDWI, NDBI)** with **OpenStreetMap
 
 ### 2️⃣ Spectral Feature Extraction
 
-* **NDVI (Normalized Difference Vegetation Index)**
-  → Detects vegetation
-* **NDWI (Normalized Difference Water Index)**
-  → Detects water
-* **NDBI (Built-up Index)** *(optional)*
-  → Detects buildings
+* **NDVI (Normalized Difference Vegetation Index)** → Vegetation detection
+* **NDWI (Normalized Difference Water Index)** → Water detection
+* **NDBI (Built-up Index)** *(optional)* → Building detection
 
 ---
 
 ### 3️⃣ Automatic Mask Generation
 
-Using :
+Using `osm_mask.py`:
 
 * Combines:
 
@@ -56,15 +69,15 @@ Using :
   * Spectral indices (NDVI, NDWI)
 * Priority-based labeling:
 
-  ```
-  OSM Water > OSM Building > OSM Road > Spectral Data
-  ```
+```
+OSM Water > OSM Building > OSM Road > Spectral Data
+```
 
 ---
 
 ### 4️⃣ Tile Generation
 
-Using :
+Using `create_tiles.py`:
 
 * Large image split into **128×128 tiles**
 * Overlapping tiles (stride = 64)
@@ -74,7 +87,7 @@ Using :
 
 ### 5️⃣ Model Training
 
-Using :
+Using `train_unet.py`:
 
 * Model: **U-Net (MobileNetV2 encoder)**
 * Loss:
@@ -88,7 +101,7 @@ Using :
 
 ### 6️⃣ Prediction
 
-Using :
+Using `predict.py`:
 
 * Predicts segmentation on tiles
 * Generates colored output masks
@@ -98,22 +111,15 @@ Using :
 
 ## 📊 Results
 
-### 🛰️ Input Image + NDVI + Mask
+### 🛰️ Input + NDVI + Mask
 
-![Input + NDVI + Mask](outputs/mask_preview.png)
-
----
-
-### 🧩 Final Segmentation Mask + Analysis
-
-![Mask Analysis](outputs/prediction_output.png)
+![Mask Preview](outputs/mask_preview.png)
 
 ---
 
-### 🔍 Tile-wise Predictions
+### 🧩 Final Segmentation Output
 
-* Shows RGB vs predicted segmentation
-* Helps visualize model performance on local regions
+![Prediction Output](outputs/prediction_output.png)
 
 ---
 
@@ -128,7 +134,7 @@ Using :
 
 ## 📂 Project Structure
 
-```bash
+```
 Satellite-LandCover-Classification/
 │
 ├── src/
@@ -181,6 +187,15 @@ python src/predict.py
 
 ---
 
+## 📚 Key Learnings
+
+* Integration of geospatial data (OSM) with satellite imagery
+* Feature extraction using NDVI & NDWI
+* Semantic segmentation using U-Net
+* Handling large images using tiling strategy
+
+---
+
 ## 🔮 Future Improvements
 
 * Use Transformer models (SegFormer)
@@ -190,5 +205,12 @@ python src/predict.py
 
 ---
 
+## 👩‍💻 Author
 
+**Srushti Telang**
 
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!

@@ -194,23 +194,5 @@ python src/predict.py
 * Semantic segmentation using U-Net
 * Handling large images using tiling strategy
 
----
 
-## 🔮 Future Improvements
 
-* Use Transformer models (SegFormer)
-* Improve small object detection (roads)
-* Use multi-temporal satellite data
-* Deploy as a web application
-
----
-
-## 👩‍💻 Author
-
-**Srushti Telang**
-
----
-
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub!
